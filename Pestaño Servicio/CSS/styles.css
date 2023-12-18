@@ -1,0 +1,592 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1E1E1E;
+    color: #777;
+}.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    margin-top: 150px; /* Ajusta el margen superior según sea necesario */
+}
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-container {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .boton-rectangular {
+        position: static;
+        margin-top: 20px;
+        right: 0;
+        bottom: 0;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .container {
+        margin-top: 100px;
+    }
+
+    .text-container {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .boton-rectangular {
+        position: static;
+        margin-top: 20px;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.content-container {
+    position: relative;
+    height: 500px; /* Ajusta la altura según sea necesario */
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+}
+
+.text-container {
+    padding: 20px;
+    width: 500px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-right: 50px;
+}
+
+
+#branding {
+    text-align: center;
+    margin: 100px 0 50px; /* Ajusta el margen superior según sea necesario */
+}
+
+
+.palabra-cambiante-container {
+    margin-top: 10px; /* Ajustar el espacio entre el texto principal y la palabra cambiante */
+}
+
+/* ... (código existente) ... */
+
+h1, #palabra-cambiante {
+    font-family: 'Karla', sans-serif;/* Reemplaza 'TuTipoDeLetra' con la fuente que desees */
+    font-size: 60px; /* Ajusta el tamaño del texto principal */
+    margin: 0; /* Elimina el margen predeterminado del h1 */
+}
+
+.text {
+    width: 100%;
+    text-align: justify;
+    font-size: 36px; /* Tamaño del texto cambiante */
+    white-space: nowrap; /* Evitar saltos de línea */
+    overflow: hidden; /* Ocultar texto que excede el contenedor */
+    border-right: 2px solid white; /* Agregar línea al estilo de escritura */
+}
+
+/* ... (resto de estilos) ... */
+.boton-rectangular {
+    position: absolute;
+    bottom: 80px;
+    right: 230px;
+    background-color: #1E1E1E;
+    color: #fff;
+    padding: 10px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    opacity: 0.8;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s, color 0.3s; /* Agregamos una transición para suavizar el cambio */
+}
+
+.boton-rectangular a {
+    text-decoration: none; /* Quita la subrayado predeterminado del enlace */
+    color: inherit; /* Hereda el color del texto del contenedor padre */
+    display: block; /* Hace que el enlace ocupe todo el espacio del botón */
+    width: 100%; /* Asegura que el enlace ocupe todo el espacio del botón */
+    height: 100%; /* Asegura que el enlace ocupe todo el espacio del botón */
+    background-color: inherit; /* Hereda el color de fondo del contenedor padre */
+}
+
+.boton-rectangular:hover {
+    background-color: #524f4f;
+    color: #000;
+    border-color: rgba(0, 0, 0, 0.4);
+    opacity: 1;
+}
+/* ... (resto de estilos) ... */
+
+
+
+/* Estilos para un elemento con la clase "hello" */
+.hello {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+}
+
+/* Estilos para el elemento con el id "primer" */
+#primer {
+    position: absolute;
+    font-size: 20px;
+
+    top: 0;
+    left: 10px;
+    transform: none;
+    line-height: 60px;
+    padding: 20px;
+}
+
+/* Estilos para el encabezado de la página */
+header {
+    background-color: #1E1E1E;
+    position: relative;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 10px;
+    text-align: right;
+    line-height: 60px;
+}
+
+/* Estilos para la lista no ordenada (barra de navegación) */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1E1E1E;
+    float: right;
+    margin-right: 20px;
+    padding-right: 20px; /* Nuevo */
+}
+
+/* Estilos para los elementos de la lista */
+li {
+    display: inline-block;
+    position: relative;
+    margin-right: 30px; /* Nuevo */
+}
+
+/* Estilos para los enlaces dentro de los elementos de la lista */
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    position: relative;
+}
+
+/* Estilos para el separador (punto) después de cada elemento de la lista */
+li::after {
+    content: '\00b7';
+    color: yellow;
+    font-size: 1.5em;
+    margin: 0 5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Eliminar el separador después del último elemento de la lista */
+li:last-child::after {
+    content: none;
+}
+
+/* Estilos cuando se pasa el ratón sobre un enlace */
+li a:hover {
+    border-bottom: 2px solid white;
+}
+
+/* Estilos para la sección de branding */
+#branding {
+    text-align: center;
+    margin: 80px 0 250px;
+}
+
+/* Estilos para el encabezado h1 dentro de la sección de branding */
+#branding h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 150px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Estilos para el texto de la marca */
+.brand-text {
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* Estilos para el logotipo de la marca */
+.brand-logo {
+    position: relative;
+    z-index: 0;
+    opacity: 0.4; 
+}
+
+/* Línea horizontal detrás del logotipo */
+.brand-logo::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: -1;
+}
+
+/* Punto amarillo después del logotipo */
+.brand-logo::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: yellow;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Estilos del párrafo agregado */
+p.addedText {
+    font-size: 30px;
+    color: #fff; 
+    margin: auto; 
+    width: 50%;
+    font-family: 'Karla', sans-serif;}
+ 
+
+
+.blur-image {
+    width: 700px;
+    height: 500px;
+    transition: transform 0.3s ease-in-out;
+    margin-right: 20px; /* Puedes ajustar este margen según tus necesidades */
+    filter: brightness(1); /* Establece el brillo inicial */
+}
+
+
+/* Estilos para el contenido de la página */
+#content {
+    padding: 10px;
+    margin-top: 60px;
+    background-color: #606060;
+}
+/* Estilos del icono de WhatsApp */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-icon a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px;
+   /* border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);*/
+}
+
+.whatsapp-icon img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.whatsapp-icon span {
+    color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+            padding: 5px; /* Ajusta según sea necesario */
+    
+}
+/* ... (código existente) ... */
+.contai {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 400px; /* Ancho del cuadro */
+    height: 400px; /* Altura del cuadro */
+    background-color: #1E1E1E; /* Color de fondo del cuadro */
+    border-radius: 10px; /* Radio de las esquinas para redondearlas */
+    margin: 10px; /* Espacio entre los cuadros */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #ffffff; /* Contorno blanco */
+}
+
+.miCuadro {
+    width: 80%; /* Ajusta el ancho del cuadro interno */
+    height: 80%; /* Ajusta la altura del cuadro interno */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; /* Ajusta el espacio interno del cuadro interno */
+    color: #ffffff; /* Color del texto */
+}
+
+.miCuadro h2 {
+    margin-bottom: 5px;
+    padding: 40px; 
+    font-size: 30px;/* Espaciado inferior para separar el título y el párrafo */
+}
+
+.miCuadro p {
+    text-align: justify;
+    font-size: 16px; /* Tamaño del texto del párrafo */
+    margin-bottom: 50px;
+    font-family: 'Karla', sans-serif;/* Reemplaza 'TuTipoDeLetra' con la fuente que desees */
+    /* Ajusta el espacio inferior del párrafo según sea necesario */
+}
+
+
+/* Estilos para el nuevo botón dentro del cuadro */
+.boton2-rectangular {
+    background-color: #1E1E1E;
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;    font-family: 'Karla', sans-serif;/* Reemplaza 'TuTipoDeLetra' con la fuente que desees */
+    /* Agregamos una transición para suavizar el cambio */
+}
+
+.boton2-rectangular a {
+    text-decoration: none; /* Quita la subrayado predeterminado del enlace */
+    color: inherit; /* Hereda el color del texto del contenedor padre */
+}
+
+.boton2-rectangular:hover {
+    background-color: #524f4f;
+    color: #000;
+    border-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.serc {
+    text-align: center; /* Centra horizontalmente el contenido dentro de .serch */
+    margin-top: 50px;
+    padding: 70px; /* Ajusta el margen superior según sea necesario */
+}
+
+.t, .de {
+    margin: 0;
+     /* Elimina el margen predeterminado del h1 y el p */
+}
+.de{
+    font-family: 'Karla', sans-serif;/* Reemplaza 'TuTipoDeLetra' con la fuente que desees */
+    font-size: 19px;
+}
+
+
+.serch {
+    text-align: center; /* Centra horizontalmente el contenido dentro de .serch */
+    margin-top: 50px;
+    padding: 70px; /* Ajusta el margen superior según sea necesario */
+}
+
+.ti, .des {
+    margin: 0;
+     /* Elimina el margen predeterminado del h1 y el p */
+}
+.des{
+    font-family: 'Karla', sans-serif;/* Reemplaza 'TuTipoDeLetra' con la fuente que desees */
+    font-size: 19px;
+}
+
+
+
+/* Estilos para los títulos de los servicios */
+.service-box h2 {
+    color: #1E1E1E; 
+    font-family: 'Karla', sans-serif;
+    font-size: 30px;/* Reemplaza 'TuTipoDeLetra' con la fuente que desees */
+    /* Cambia el color a tu preferencia, por ejemplo, verde (#00ff00) */
+}
+.service-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0; /* Ajusta el margen superior según sea necesario */
+}
+
+.service-box {
+    width: 280px;
+    height: 800px; /* Ajusta el ancho de cada cuadro de servicio */
+    background-color: #fff; /* Color de fondo blanco */
+    border-radius: 10px; /* Esquinas redondeadas */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+.service-box:hover {
+    background-color: #1E1E1E; /* Cambia el color de fondo al pasar el mouse sobre el cuadro */
+    color: #fff; /* Cambia el color del texto al pasar el mouse sobre el cuadro */
+}
+.service-box:hover h2 {
+    color: #fff; /* Cambia el color del título al pasar el mouse sobre el cuadro */
+}
+
+.service-box {
+    transition: background-color 0.3s, color 0.3s;
+}
+.price-box {
+    width: 280px;
+    height: 35px;
+    background-color: #1E1E1E; /* Color de fondo negro */
+    color: #fff; /* Color del texto blanco */
+    border-radius: 50px;
+    margin-top: 10px;
+    padding: 0px;
+    font-size: 25px;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 10px;
+}
+.service-box .price-box small {
+    font-size: 12px; /* Tamaño de fuente más pequeño para las letras "MXN" */
+    color: #ffffff; /* Cambia el color del texto según tus necesidades */
+}
+
+.service-box .features-list {
+    background-color: #fff;
+    list-style: none;
+    color: #1E1E1E;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.service-box .features-list li {
+    background-color: #fffefe;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Establece el tamaño de fuente específicamente para los elementos de la lista de servicios */
+.service-box .features-list li {
+    font-size: 17px; /* Ajusta el tamaño de fuente según tus preferencias */
+}
+
+.service-box .features-list li:not(:last-child)::after {
+    content: none; /* Elimina el contenido (punto) después de cada elemento de la lista, excepto el último */
+}
+
+
+.service-button {
+    display: block;
+    text-decoration: none;
+    background-color: #1E1E1E; /* Color verde para el botón */
+    color: #fff; /* Color del texto blanco */
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+
+}
+.contact-container {
+    display: flex;
+    height: 100vh;
+}
+
+.white-section {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    color: #000;
+    border-radius:70px;
+}  
+
+
+.dark-section {
+    flex: 1;
+    background-color: #1E1E1E;
+    padding: 20px;
+    color: #fff;
+}h1, h2 {
+    margin-bottom: 10px;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+label {
+    color: #000;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+
+
+
+.dark-section p {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    padding: 50px;
+}
+
+.dark-section p img {
+    margin-right: 10px;
+    width: 30px; /* Ajusta el ancho del icono según tus necesidades */
+    height: 30px; /* Ajusta la altura del icono según tus necesidades */
+}
+
+/* Nuevo estilo para el div del copyright */
+.copyright {
+    margin-top: 20px;
+    border-top: 1px solid #fff; /* Línea blanca delgada en la parte superior */
+    padding-top: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+}
